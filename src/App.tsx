@@ -5,8 +5,8 @@ import Calender from './Modules/Calender';
 function App() {
   return (
     <div className="App">
-      <h1>Big-Calender</h1>
-      <Calender/>
+      <h1>Good-Calendar</h1>
+      <Calender />
     </div>
   );
 }

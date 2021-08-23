@@ -1,8 +1,10 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles((theme) => ({
-  root: {
-    width: '100%',
-    padding: '10px'
+  monthdiv: {
+    textAlign: 'center',
+    color: 'green',
+    marginTop: '10px',
+    marginLeft: '24%'
   }
 }));
