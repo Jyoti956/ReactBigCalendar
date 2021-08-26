@@ -65,15 +65,15 @@ export default function Calender() {
 
   const getDatesInMonthDisplay = (month: number, year: number) => {
     const totalDaysInMonth = getDaysInMonth(month, year);
+    console.log(totalDaysInMonth, 'totalDaysInMonth');
+
     const firstWeekday = getFirstWeekdayOfMonth(month, year);
-    console.log('firstWeekday:', firstWeekday, 'month:', month);
+    console.log('firstWeekday:', firstWeekday, 'currentMonth:', month);
 
     const prev = getPrevMonthYear(month, year);
     console.log(prev, 'prevMonthYear');
     const prevDaysInMonth = getDaysInMonth(prev.month, prev.year);
     console.log(prevDaysInMonth, 'prevDaysInMonth');
-    const decDaysInMonth = getDaysInMonth(12, 2021);
-    console.log('decDaysInMonth', decDaysInMonth);
 
     const next = getNextMonthYear(month, year);
     console.log(next, 'nextMonthYear');
@@ -162,7 +162,12 @@ export default function Calender() {
       <NextBackButtons onClickNext={onClickNext} onClickBack={onClickBack} />
       <SelectedDate selectedDate={selectedDate} />
       <MonthAndYear calendar={calendar} />
-      <MonthlyView arrOfArrays={arrOfArrays} onSelectDate={onSelectDate} calendar={calendar} />
+      <MonthlyView
+        arrOfArrays={arrOfArrays}
+        onSelectDate={onSelectDate}
+        calendar={calendar}
+        selectedDate={selectedDate}
+      />
     </div>
   );
 }

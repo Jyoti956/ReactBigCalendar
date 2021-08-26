@@ -4,12 +4,12 @@ import moment from 'moment';
 
 export default function MonthAndYear(props: any) {
   const classes = useStyles();
-  const MONTHS = moment.monthsShort();
+  const Months = moment.months();
   return (
     <div className={classes.monthdiv}>
-      <h2>
-        {MONTHS[props.calendar.currentMonth]}-{props.calendar.currentYear}
-      </h2>
+      
+        {Months[props.calendar.currentMonth]}-{props.calendar.currentYear}
+      
     </div>
   );
 }

@@ -5,6 +5,8 @@ export const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: 'green',
     marginTop: '10px',
-    marginLeft: '24%'
+    marginLeft: '24%',
+    fontSize:'35px',
+    fontWeight:"bold"
   }
 }));

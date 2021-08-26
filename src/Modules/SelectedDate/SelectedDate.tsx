@@ -8,7 +8,7 @@ export default function SelectedDate(props: any) {
   return (
     <div>
       <h3 className={classes.h3}>
-        Selected Date: <Moment format='MMMM Do YYYY, h:mm:ss a'>{props.selectedDate}</Moment>
+        <u>Selected Date</u>: <Moment format='MMMM Do YYYY, h:mm:ss a'>{props.selectedDate}</Moment>
       </h3>
     </div>
   );

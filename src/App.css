@@ -2,6 +2,9 @@
   text-align: center;
 }
 .App h1{
-  color:orangered;
+  font-weight:"bolder";
+  color:  orangered; 
+  
+    
 }
 
