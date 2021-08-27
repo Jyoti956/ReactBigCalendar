@@ -6,6 +6,9 @@ export default function NextBackButtons(props: any) {
 
   return (
     <div className={classes.btndiv}>
+      <button className={classes.todayBtn} onClick={props.onClickToday}>
+        Today
+      </button>
       <button className={classes.btn} onClick={props.onClickBack}>
         Back
       </button>

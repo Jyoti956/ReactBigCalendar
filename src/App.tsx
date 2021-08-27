@@ -4,8 +4,7 @@ import Calender from './Modules/Calender';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Good-Calendar</h1>
+    <div className='App'>
       <Calender />
     </div>
   );

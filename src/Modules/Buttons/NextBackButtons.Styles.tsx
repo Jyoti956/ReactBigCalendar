@@ -1,11 +1,20 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-export const useStyles = makeStyles((theme) => ({
+export const useStyles = makeStyles(() => ({
   btndiv: {
     float: 'left',
-    padding: '10px'
+    padding: '10px',
+    marginLeft: '8px'
   },
   btn: {
+    padding: '8px',
+    color: 'black',
+    borderRadius: '5px',
+    fontWeight: 'bolder',
+    backgroundColor: '-webkit-linear-gradient(to right, #fc4d50, #ff9966)',
+    background: 'linear-gradient(to right, #fd5053, #ff9966)'
+  },
+  todayBtn:{
     padding: '8px',
     color: 'black',
     borderRadius: '5px',

@@ -27,6 +27,7 @@ export default function Calender() {
     previousMonth: selectedDate.month() - 1,
     previousYear: selectedDate.year() - 1
   });
+  const today = moment();
 
   const getDaysInMonth = (month: number, year: number) => {
     return moment({ month: month, year: year }).daysInMonth();
@@ -104,7 +105,6 @@ export default function Calender() {
     getDatesInMonthDisplay(calendar.currentMonth, calendar.currentYear);
     setArrOfArrays([...arrOfArrays]);
     const { nextMonth, nextYear, previousMonth, previousYear } = datesGenerator(calendar);
-
     setCalendar({
       ...calendar,
       nextMonth,
@@ -112,13 +112,30 @@ export default function Calender() {
       previousMonth,
       previousYear
     });
-
     console.log(calendar, 'calendar');
   }, []);
 
   const onSelectDate = (date: IDates) => {
     setSelectedDate(moment(date));
     console.log(selectedDate);
+  };
+
+  const onClickToday = () => {
+    arrOfArrays.splice(0, arrOfArrays.length);
+    getDatesInMonthDisplay(today.month(), today.year());
+    setSelectedDate(moment());
+    setArrOfArrays([...arrOfArrays]);
+    const { nextMonth, nextYear, previousMonth, previousYear } = datesGenerator(calendar);
+
+    setCalendar({
+      currentMonth: today.month(),
+      currentYear: today.year(),
+      nextMonth,
+      nextYear,
+      previousMonth,
+      previousYear
+    });
+    console.log(calendar, 'calendar');
   };
 
   const onClickNext = () => {
@@ -159,7 +176,7 @@ export default function Calender() {
 
   return (
     <div className={classes.root}>
-      <NextBackButtons onClickNext={onClickNext} onClickBack={onClickBack} />
+      <NextBackButtons onClickNext={onClickNext} onClickBack={onClickBack} onClickToday={onClickToday} />
       <SelectedDate selectedDate={selectedDate} />
       <MonthAndYear calendar={calendar} />
       <MonthlyView

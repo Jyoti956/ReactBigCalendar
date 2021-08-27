@@ -6,10 +6,8 @@ export default function SelectedDate(props: any) {
   const classes = useStyles();
 
   return (
-    <div>
-      <h3 className={classes.h3}>
-        <u>Selected Date</u>: <Moment format='MMMM Do YYYY, h:mm:ss a'>{props.selectedDate}</Moment>
-      </h3>
+    <div className={classes.h3}>
+      <u>Selected Date</u>: <Moment format='MMMM Do YYYY, h:mm:ss a'>{props.selectedDate}</Moment>
     </div>
   );
 }

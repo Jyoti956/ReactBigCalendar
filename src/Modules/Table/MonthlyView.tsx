@@ -10,11 +10,12 @@ export default function MonthlyView(props: any) {
   const style1 = {
     backgroundColor: 'lightgrey',
     cursor: 'not-allowed',
-    fontWeight:3,
+    fontWeight: 3
   };
   const style2 = {
     backgroundColor: 'rgb(108, 205, 238)',
-    color:'red'
+    color: 'white',
+    borderRadius:'90%'
   };
 
   return (
@@ -35,12 +36,12 @@ export default function MonthlyView(props: any) {
       </thead>
       <tbody>
         {props.arrOfArrays.length > 0 &&
-          props.arrOfArrays.map((week: any[]) => (
-            <tr key={JSON.stringify(week[0])}>
-              {week.map((day: IDates, index: number) => {
+          props.arrOfArrays.map((week: any[], x: number) => (
+            <tr key={x}>
+              {week.map((day: IDates, y: number) => {
                 return (
                   <td
-                    key={index}
+                    key={y}
                     className={classes.td}
                     onClick={() => props.onSelectDate(day)}
                     style={
@@ -48,6 +49,8 @@ export default function MonthlyView(props: any) {
                         ? style1
                         : day.date === props.selectedDate.date()
                         ? style2
+                        : day.date === props.arrOfArrays[x][0].date
+                        ? { color: 'red' }
                         : { backgroundColor: 'white' }
                     }>
                     {day.date}
